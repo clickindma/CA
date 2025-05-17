@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.R & Associates - Professional Accounting & Business Registration Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .section {
+            padding-top: 80px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4F46E5;
+        }
+        .bg-primary {
+            background-color: #4F46E5;
+        }
+        .text-primary {
+            color: #4F46E5;
+        }
+        .border-primary {
+            border-color: #4F46E5;
+        }
+        .btn-primary {
+            background-color: #4F46E5;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #4338CA;
+        }
+        .btn-outline {
+            border: 2px solid #4F46E5;
+            color: #4F46E5;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #4F46E5;
+            color: white;
+        }
+        .hero-pattern {
+            background-color: #f9fafb;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234f46e5' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .active-nav {
+            color: #4F46E5;
+            font-weight: bold;
+        }
+        [id] {
+            scroll-margin-top: 80px;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="fixed w-full bg-white shadow-md z-50 no-print">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-800 flex items-center">
+                <span class="text-primary">A.R</span> & Associates
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-gray-800 text-xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden w-full px-6 py-4 bg-white shadow-md">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section hero-pattern min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-6 py-20">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-10">
+                        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Professional Accounting & Business Services</h1>
+                        <p class="text-xl text-gray-600 mb-8">Your trusted partner for GST, company incorporation, and comprehensive accounting solutions.</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#services" class="btn-primary py-3 px-8 rounded-lg text-center">Our Services</a>
+                            <a href="#contact" class="btn-outline py-3 px-8 rounded-lg text-center">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                        <div class="w-full max-w-md bg-white rounded-lg shadow-xl p-6 border border-gray-200">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800">A.R & Associates</h3>
+                                <p class="text-gray-600">Expertise. Integrity. Results.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>GST Services</span>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Company Incorporation</span>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Income Tax Returns</span>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Bookkeeping & Accounting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section bg-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About A.R & Associates</h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-10">
+                        <h3 class="text-2xl font-semibold mb-4">Your Trusted Partner in Financial Success</h3>
+                        <p class="text-gray-600 mb-6">
+                            A.R & Associates is a premier accounting and business consulting firm dedicated to providing comprehensive financial solutions to businesses of all sizes. With offices in New Delhi and Darbhanga, we serve clients across multiple regions with expertise and personalized attention.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            Our team of experienced professionals brings together extensive knowledge in taxation, accounting, and regulatory compliance to deliver exceptional results for our clients. We understand the evolving financial landscape and stay updated with the latest regulatory changes to provide timely and accurate guidance.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-award text-primary mr-2"></i>
+                                <span>10+ Years Experience</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-primary mr-2"></i>
+                                <span>500+ Happy Clients</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt text-primary mr-2"></i>
+                                <span>2000+ Projects</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-handshake text-primary mr-2"></i>
+                                <span>100% Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 mt-10 md:mt-0">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-6">Our Vision & Mission</h3>
+                            <div class="mb-8">
+                                <h4 class="text-xl font-medium mb-2 text-primary">Vision</h4>
+                                <p class="text-gray-600">
+                                    To be the most trusted financial advisor empowering businesses to achieve financial excellence and sustainable growth.
+                                </p>
+                            </div>
+                            <div class="mb-8">
+                                <h4 class="text-xl font-medium mb-2 text-primary">Mission</h4>
+                                <p class="text-gray-600">
+                                    To deliver innovative and comprehensive financial solutions with integrity, accuracy, and personalized service, enabling our clients to navigate complex financial landscapes with confidence.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium mb-2 text-primary">Our Values</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Integrity & Transparency</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Excellence & Accuracy</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Client-Centric Approach</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Innovation & Continuous Learning</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section bg-gray-50">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive financial and business registration solutions tailored to meet your unique requirements.</p>
+                    <div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- GST Services -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-file-invoice text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">GST Services</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>GST Registration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>GST Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>GST Refund</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>GST Notice & Appeal</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Company Incorporation -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-building text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Company Incorporation</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Private Limited Company</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Limited Liability Partnership (LLP)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>One Person Company (OPC)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>All Types of Company Registration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bookkeeping & Accounting -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-calculator text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Bookkeeping & Accounting</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Full-time Accounting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Part-time Accounting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Computerized Accounting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Financial Statement Preparation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Income Tax Return -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-rupee-sign text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Income Tax Return</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Individual ITR Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Business/Professional ITR</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Partnership Firm ITR</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Company ITR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- TDS/TCS Filing -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-percent text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">TDS/TCS Filing</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>TDS Return Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>TCS Return Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Form 16/16A Generation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>TDS/TCS Correction Statements</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ROC Compliances -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-file-contract text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">ROC Compliances</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Annual Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Change in Directors/Shareholders</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Change in Registered Office</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Other ROC Compliances</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Yamuna Authority Works -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-city text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Yamuna Authority Works</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Authority Registrations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Compliance Assistance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Documentation Support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Advisory Services</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- UDYAM/MSME Registration -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-industry text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">UDYAM/MSME Registration</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>UDYAM Registration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>MSME Registration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>MSME Certification</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>MSME Scheme Assistance</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- PF/ESIC Registration & Filing -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-users-cog text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">PF/ESIC Registration & Filing</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>PF Registration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>ESIC Registration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Monthly PF/ESIC Return Filing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>PF/ESIC Compliance Management</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section bg-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our services and processes.</p>
+                    <div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">What is GST and who needs to register for it?</h3>
+                            <p class="text-gray-600">
+                                GST (Goods and Services Tax) is an indirect tax levied on the supply of goods and services. Businesses with an annual turnover exceeding ₹20 lakhs (₹10 lakhs for special category states) must register for GST. Additionally, businesses involved in interstate supply, e-commerce operations, or those required to pay tax under reverse charge must register regardless of turnover.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">How long does it take to incorporate a company in India?</h3>
+                            <p class="text-gray-600">
+                                The typical timeframe for company incorporation in India is 7-15 working days, depending on the type of entity and complexity. This includes obtaining Director Identification Number (DIN), Digital Signature Certificates (DSC), name approval, and certificate of incorporation. With our expert assistance, we ensure the process is completed efficiently with minimal delays.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">What are the benefits of UDYAM/MSME registration?</h3>
+                            <p class="text-gray-600">
+                                UDYAM/MSME registration provides numerous benefits including priority sector lending, lower interest rates, subsidies on patent registration, protection against delayed payments, exemption from direct tax laws for startups, concession in electricity bills, and eligibility for various government schemes and incentives designed to promote small businesses in India.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">What is the due date for filing Income Tax Returns?</h3>
+                            <p class="text-gray-600">
+                                For individuals and entities not requiring audit, the due date is typically July 31 following the end of the financial year. For businesses requiring audit, the due date is October 31. For companies with international transactions, it's November 30. However, these dates may be extended by the Income Tax Department. We recommend filing early to avoid last-minute issues.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">How often do I need to file GST returns?</h3>
+                            <p class="text-gray-600">
+                                Regular GST taxpayers must file monthly or quarterly returns depending on their turnover and scheme opted for. GSTR-1 (sales details) and GSTR-3B (summary return) are the primary returns. Composition scheme taxpayers file quarterly returns. Annual returns (GSTR-9) must be filed by all GST-registered entities. We provide comprehensive GST filing services to ensure compliance with all deadlines.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3">What services do you provide for ROC compliance?</h3>
+                            <p class="text-gray-600">
+                                Our ROC compliance services include annual filings (AOC-4, MGT-7), managing changes in company details (directors, registered office, share capital), maintaining statutory registers, conducting board/general meetings, and preparing minutes. We ensure timely compliance with all Registrar of Companies requirements to avoid penalties and maintain your company's good standing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="section bg-gray-50">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Reach out to us for professional assistance with your accounting and business registration needs.</p>
+                    <div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 order-2 lg:order-1">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+                                    <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">Select a Service</option>
+                                        <option value="GST">GST Services</option>
+                                        <option value="Company">Company Incorporation</option>
+                                        <option value="Bookkeeping">Bookkeeping & Accounting</option>
+                                        <option value="ITR">Income Tax Return</option>
+                                        <option value="TDS">TDS/TCS Filing</option>
+                                        <option value="ROC">ROC Compliances</option>
+                                        <option value="MSME">UDYAM/MSME Registration</option>
+                                        <option value="PFESIC">PF/ESIC Registration</option>
+                                        <option value="Other">Other Services</option>
+                                    </select>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary py-3 px-8 rounded-lg w-full">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 lg:pl-12 order-1 lg:order-2 mb-10 lg:mb-0">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold mb-6">Our Offices</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Office 1 -->
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="text-xl font-medium mb-3">New Delhi Office</h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Sarai khalil, Sadar Bazar,<br>
+                                        New Delhi-110006
+                                    </p>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-phone text-primary mr-3"></i>
+                                        <span>+91 98XXXXXXXX</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-envelope text-primary mr-3"></i>
+                                        <span>arassociates092@gmail.com</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Office 2 -->
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="text-xl font-medium mb-3">Darbhanga Office</h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Tawar Chowk,<br>
+                                        Darbhanga- 846004
+                                    </p>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-phone text-primary mr-3"></i>
+                                        <span>+91 98XXXXXXXX</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-envelope text-primary mr-3"></i>
+                                        <span>arassociates092@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6">Business Hours</h3>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-medium mb-2">Monday - Friday</h4>
+                                        <p class="text-gray-600">9:30 AM - 6:30 PM</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-2">Saturday</h4>
+                                        <p class="text-gray-600">10:00 AM - 4:00 PM</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-2">Sunday</h4>
+                                        <p class="text-gray-600">Closed</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-2">Holidays</h4>
+                                        <p class="text-gray-600">Call for Availability</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="section bg-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Privacy Policy</h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto text-gray-600 space-y-6">
+                    <p>
+                        Last Updated: June 2023
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">Introduction</h3>
+                    <p>
+                        A.R & Associates ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">Information We Collect</h3>
+                    <p>
+                        We may collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our services, when you participate in activities on the Website, or otherwise when you contact us.
+                    </p>
+                    <p>
+                        The personal information that we collect depends on the context of your interactions with us and the Website, the choices you make, and the services and features you use. The personal information we collect may include:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Name and contact information (email address, phone number, etc.)</li>
+                        <li>Business information (company name, designation, etc.)</li>
+                        <li>Financial information for processing payments</li>
+                        <li>Information provided in forms, surveys, or other interactive areas</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">How We Use Your Information</h3>
+                    <p>
+                        We may use the information we collect for various purposes, including to:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Provide, operate, and maintain our services</li>
+                        <li>Improve, personalize, and expand our services</li>
+                        <li>Understand and analyze how you use our services</li>
+                        <li>Develop new products, services, features, and functionality</li>
+                        <li>Communicate with you about our services, updates, and other information</li>
+                        <li>Process transactions and send related information</li>
+                        <li>Find and prevent fraud</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">Disclosure of Your Information</h3>
+                    <p>
+                        We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>To comply with legal obligations</li>
+                        <li>To protect and defend our rights and property</li>
+                        <li>With your consent or at your direction</li>
+                        <li>With service providers who perform services for us</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">Security of Your Information</h3>
+                    <p>
+                        We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">Contact Us</h3>
+                    <p>
+                        If you have questions or concerns about this Privacy Policy, please contact us at:
+                    </p>
+                    <p>
+                        Email: arassociates092@gmail.com<br>
+                        Address: Sarai khalil, Sadar Bazar, New Delhi-110006
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms & Conditions Section -->
+        <section id="terms" class="section bg-gray-50">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Terms & Conditions</h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto text-gray-600 space-y-6">
+                    <p>
+                        Last Updated: June 2023
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">1. Agreement to Terms</h3>
+                    <p>
+                        By accessing or using our services, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, you may not access our services.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">2. Services</h3>
+                    <p>
+                        A.R & Associates provides accounting, tax, and business registration services. We reserve the right to change, suspend, or discontinue any aspect of our services at any time, including hours of operation or availability of the service or any feature, without notice and without liability.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">3. Client Responsibilities</h3>
+                    <p>
+                        Clients are responsible for providing accurate and complete information necessary for service delivery. We rely on the information provided by clients and are not responsible for errors resulting from incomplete or inaccurate information.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">4. Fees and Payment</h3>
+                    <p>
+                        Fees for our services are as agreed upon in writing before service commencement. Payment terms are due as specified in our invoices. Late payments may incur additional charges.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">5. Confidentiality</h3>
+                    <p>
+                        We maintain strict confidentiality regarding all client information. We will not disclose any confidential information unless required by law or with client consent.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">6. Intellectual Property</h3>
+                    <p>
+                        All content, trademarks, logos, and service marks displayed on our website are our property or the property of our licensors. You may not use, reproduce, or distribute such content without prior written consent.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">7. Limitation of Liability</h3>
+                    <p>
+                        To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities arising from your use of our services.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">8. Governing Law</h3>
+                    <p>
+                        These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law principles.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">9. Changes to Terms</h3>
+                    <p>
+                        We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services after any changes indicates your acceptance of the modified Terms.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800">10. Contact Information</h3>
+                    <p>
+                        For questions about these Terms, please contact us at:
+                    </p>
+                    <p>
+                        Email: arassociates092@gmail.com<br>
+                        Address: Sarai khalil, Sadar Bazar, New Delhi-110006
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4">A.R & Associates</h3>
+                    <p class="mb-4">Your trusted partner for accounting, tax, and business registration services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-primary transition-colors">GST Services</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Company Incorporation</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Income Tax Returns</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Bookkeeping & Accounting</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">MSME Registration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Sarai khalil, Sadar Bazar, New Delhi-110006</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Tawar Chowk, Darbhanga- 846004</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>arassociates092@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3"></i>
+                            <span>+91 98XXXXXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2023 A.R & Associates. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-4">
+                    <a href="#privacy" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#terms" class="hover:text-primary transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Highlight active nav item based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function highlightNavItem() {
+            const scrollPosition = window.scrollY;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active-nav');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active-nav');
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', highlightNavItem);
+        highlightNavItem();
+        
+        // Close mobile menu when link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
